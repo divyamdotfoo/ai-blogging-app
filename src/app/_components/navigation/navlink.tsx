@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { capitalize, cn } from "~/lib/utils";
-interface NavlinkProps {
+export interface NavlinkProps {
   name: string;
   path: string;
 }

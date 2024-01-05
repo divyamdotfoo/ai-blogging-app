@@ -18,14 +18,18 @@ import {
   PopoverTrigger,
 } from "~/components/ui/popover";
 import { NotificationContent } from "../notification/content";
-export function SearchBtn() {
+import { cn } from "~/lib/utils";
+export function SearchBtn({ asFooter }: { asFooter: boolean }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button
           size={"icon"}
           variant={"link"}
-          className=" hover:border-border rounded-full border border-transparent"
+          className={cn(
+            "hover:border-border text-foreground hover:text-primary rounded-full border border-transparent",
+            asFooter ? "md:hidden" : "hidden md:block",
+          )}
         >
           <MagnifyingGlassIcon className=" h-6 w-6" />
         </Button>
@@ -59,7 +63,7 @@ export function Write() {
 export function Notification() {
   return (
     <Popover>
-      <PopoverTrigger>
+      <PopoverTrigger asChild>
         <Button variant={"outline"} size={"icon"} className=" rounded-full">
           <BellIcon className="h-5 w-5" />
         </Button>
