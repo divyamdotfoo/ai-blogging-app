@@ -2,7 +2,7 @@ import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
-
+console.log(cookies())
 import { TRPCReactProvider } from "~/trpc/react";
 
 const inter = Inter({
